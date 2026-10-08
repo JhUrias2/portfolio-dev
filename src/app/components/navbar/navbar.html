@@ -1,0 +1,49 @@
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-slate-900/80 border-b border-slate-800 text-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Logo / Monograma -->
+      <a href="#" class="flex items-center space-x-2 text-xl font-bold tracking-wider text-emerald-400 hover:text-emerald-300 transition-colors">
+        <span class="text-2xl font-black">&lt;JU /&gt;</span>
+      </a>
+
+      <!-- Navegación Escritorio -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#about" class="hover:text-emerald-400 transition-colors">Sobre mí</a>
+        <a href="#skills" class="hover:text-emerald-400 transition-colors">Habilidades</a>
+        <a href="#projects" class="hover:text-emerald-400 transition-colors">Proyectos</a>
+        <a href="#contact" class="hover:text-emerald-400 transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Botón de Acción (CV / Redes) -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://github.com/jhurias" target="_blank" mat-icon-button class="text-slate-300 hover:text-white">
+          <mat-icon>code</mat-icon>
+        </a>
+        <a href="#contact" mat-flat-button class="!bg-emerald-500 !text-slate-900 font-semibold hover:!bg-emerald-400">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Botón Menú Móvil -->
+      <div class="md:hidden flex items-center">
+        <button mat-icon-button (click)="toggleMenu()" class="text-slate-200">
+          <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú Desplegable Móvil -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+    <a href="#about" (click)="closeMenu()" class="block text-slate-300 hover:text-emerald-400 py-2">Sobre mí</a>
+    <a href="#skills" (click)="closeMenu()" class="block text-slate-300 hover:text-emerald-400 py-2">Habilidades</a>
+    <a href="#projects" (click)="closeMenu()" class="block text-slate-300 hover:text-emerald-400 py-2">Proyectos</a>
+    <a href="#contact" (click)="closeMenu()" class="block text-slate-300 hover:text-emerald-400 py-2">Contacto</a>
+    <div class="pt-2 border-t border-slate-800 flex justify-start">
+      <a href="#contact" (click)="closeMenu()" mat-flat-button class="!bg-emerald-500 !text-slate-900 font-semibold w-full">
+        Contacto
+      </a>
+    </div>
+  </div>
+</header>
