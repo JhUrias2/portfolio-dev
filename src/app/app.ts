@@ -4,11 +4,12 @@ import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { AboutSkills } from './components/about-skills/about-skills';
 import { Projects } from './components/projects/projects';
+import { ContactFooter } from './components/contact-footer/contact-footer';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Navbar, Hero,AboutSkills, Projects],
+  imports: [Navbar, Hero,AboutSkills, Projects, ContactFooter],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
