@@ -1,0 +1,56 @@
+<section id="about" class="py-20 bg-slate-900/50 text-slate-100 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <!-- Encabezado de Sección -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <h2 class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Perfil & Habilidades</h2>
+      <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Sobre mí & Stack Tecnológico
+      </p>
+      <div class="w-12 h-1 bg-emerald-500 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Contenido: Biografía -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-12 bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-lg space-y-4">
+        <h3 class="text-xl font-bold text-emerald-400 flex items-center gap-2">
+          <mat-icon>person</mat-icon>
+          Trayectoria Profesional
+        </h3>
+        <p class="text-slate-300 leading-relaxed">
+          Soy un desarrollador de software enfocado en la resolución de problemas de negocio mediante soluciones digitales robustas y eficientes. Cuento con experiencia en el ciclo completo de desarrollo de software: desde la construcción de aplicaciones móviles nativas/multiplataforma y la arquitectura frontend en Angular, hasta el diseño de APIs backend en NestJS y .NET.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          Me destaco por automatizar y modernizar flujos de trabajo en entornos empresariales, transformando procesos manuales en herramientas visuales, seguras y de alto impacto operativo. Además, gestiono entornos de contenedores con Docker y bases de datos relacionales para garantizar despliegues estables.
+        </p>
+      </div>
+    </div>
+
+    <!-- Matriz de Habilidades con Logos -->
+    <div id="skills" class="space-y-6">
+      <h3 class="text-2xl font-bold text-white text-center sm:text-left">
+        Competencias Técnicas
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div *ngFor="let category of skillCategories" class="bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors rounded-xl p-6 space-y-4">
+          
+          <div class="flex items-center space-x-3 text-emerald-400">
+            <mat-icon>{{ category.icon }}</mat-icon>
+            <h4 class="text-lg font-bold text-slate-100">{{ category.title }}</h4>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5 pt-2">
+            <div *ngFor="let skill of category.skills" 
+                 class="flex items-center gap-2 px-3 py-1.5 bg-slate-800/90 hover:bg-slate-800 text-slate-200 text-xs sm:text-sm font-medium rounded-lg border border-slate-700/60 hover:border-emerald-500/50 transition-all shadow-sm">
+              <i [class]="skill.iconClass + ' text-lg'"></i>
+              <span>{{ skill.name }}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
